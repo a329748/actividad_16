@@ -1,13 +1,10 @@
 const app = Vue.createApp({
 	data() {
 		return {
-			materia: "PDP",
-			semestre: "6",
-			carrera: "ICC",
 			products: [
-				{name: "Cerveza", amount: 100},
-				{name: "Vino", amount: 150},
-				{name: "Cognac", amount: 200}
+				{name: "Beer", amount: 100},
+				{name: "Wine", amount: 150},
+				{name: "Whiskey", amount: 200}
 			],
 			product: ""
 		}
@@ -22,11 +19,6 @@ const app = Vue.createApp({
 
 	computed: {
 		total() {
-			/*let total = 0
-			for(product of this.products) {
-				total = total + product.amount
-			}
-			return total*/
 			return this.products.reduce((counter, item) => counter + item.amount, 0)
 		}
 	}

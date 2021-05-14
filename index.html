@@ -10,24 +10,24 @@
 <body>
 	<div id="container">
 		<div id="app">
-			<p>Materia: {{materia}}</p>
-			<p>Semestre: {{semestre}}</p>
-			<p>Carrera: {{carrera}}</p><br>
-			<p>Productos:</p>
+			<h3>Products:</h3>
 			<p>
 				<input type="text" v-model="product" @keyup.enter="addProduct">
 				<button @click="addProduct">Add</button>
 			</p>			
 			<ul v-for="product in products">
 				<li>
-					<input type="number" v-model.number="product.amount">
-					{{product.name}} | {{product.amount}}
+
+					{{product.name}}<span id="amount"> – {{product.amount}} – </span>
+					<span id="bullet">
 					<button @click="product.amount++">+</button>
 					<button @click="product.amount--">-</button>
-					<span v-if="product.amount<=0">N/A</span>
+					<input type="number" v-model.number="product.amount">
+					<span v-if="product.amount<=0"> N/A</span>
+					</span>
 				</li>
 			</ul>
-			<p>{{total}}</p>
+			<h4>Total: {{total}}</h4>
 		</div>
 	</div>
 	<script src="https://unpkg.com/vue@next"></script>
