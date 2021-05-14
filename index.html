@@ -10,6 +10,7 @@
 <body>
 	<div id="container">
 		<div id="app">
+			<h2>Actividad 16</h2>
 			<h3>Products:</h3>
 			<p>
 				<input type="text" v-model="product" @keyup.enter="addProduct">
@@ -17,7 +18,6 @@
 			</p>			
 			<ul v-for="product in products">
 				<li>
-
 					{{product.name}}<span id="amount"> – {{product.amount}} – </span>
 					<span id="bullet">
 					<button @click="product.amount++">+</button>
